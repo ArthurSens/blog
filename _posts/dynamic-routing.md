@@ -1,11 +1,11 @@
 ---
-title: 'Dynamic Routing and Static Generation'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+title: 'whoami'
+excerpt: 'I change everyday, but I can tell a thing or two about the persons I have been in the past 😊'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-03-18T00:00:00.000Z'
 author:
-  name: JJ Kasper
-  picture: '/assets/blog/authors/jj.jpeg'
+  name: Arthur Sens
+  picture: '/assets/blog/authors/arthursens.jpg'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
