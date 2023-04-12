@@ -10,13 +10,6 @@ ogImage:
   url: '/assets/blog/prometheus-agent-support/cover.png'
 ---
 
-* [What is Prometheus Agent?](#what-is-prometheus-agent)
-* [Why not re-use the Prometheus Custom Resource?](#why-not-re-use-the-prometheus-custom-resource)
-* [Looking for feedback!](#looking-for-feedback)
-* [What's next for Agent mode?](#whats-next-for-agent-mode)
-  * [Improve Test coverage](#improve-test-coverage)
-  * [Support for different Deployment Patterns prometheus-operator/prometheus-operator#5495](#support-for-different-deployment-patterns-prometheus-operatorprometheus-operator5495)
-
 The Prometheus-Operator team has recently released [v0.64.0](https://github.com/prometheus-operator/prometheus-operator/releases/tag/v0.64.0) and with it comes the long wait support for running Prometheus in [Agent mode](https://www.cncf.io/blog/2021/11/16/prometheus-announces-an-agent-to-address-a-new-range-of-use-cases/). With agent mode being [released by the upstream project](https://github.com/prometheus/prometheus/releases/tag/v2.32.0) in late 2021 and support for it [requested in the operator bug tracker even before that](https://github.com/prometheus-operator/prometheus-operator/issues/3989), we can confidently say that this was a long-waited feature!
 
 ## What is Prometheus Agent?
