@@ -18,6 +18,25 @@ Prometheus Agent is a specialized mode that focuses on three parts that have mad
 
 Without a local storage, Prometheus Agent is not able to provide metrics via query APIs, nor to evaluate rules and therefore can't send them to an Alertmanager cluster either. For the majority of scenarios, this is a fine trade since metrics are queried and evaluated from other Prometheus compatible tools like Cortex and Thanos.
 
+## What is Prometheus-Operator?
+
+Prometheus-Operator is a Kubernetes Operator that manages Prometheus instances, and its configuration, running in a Kubernetes Cluster. Alongside Prometheus, it can also manage siblings components that often run alongside Prometheus, e.g. Alertmanager and ThanosRuler. Prometheus-Operator accomplishes its job by leveraging the Kubernetes API, using Custom Resource Definitions (CRD). 
+
+With the Prometheus Custom Resource, for example, you can use a Kubernetes manifest to declaratively definte the whole Prometheus configuration, e.g. specify remote-write/read endpoints and authentication, configure TSDB retention and block durations, enable feature flags and several other bits that you may need.
+
+One could say that we could just run prometheus in Agent mode with the following manifest:
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+  namespace: monitoring
+spec:
+  enableFeatures: ["agent"]
+  image: quay.io/prometheus/prometheus:v2.43.0
+```
+
 ## Why not re-use the Prometheus Custom Resource?
 
 To explain why a new CRD was needed, first we need to explain the differences of running Prometheus in Server and Agent modes. Prometheus Agent was implemented in a way that both the Server and the Agent run from the same binary, with a few differences with runtime configuration through flags and also in the configuration file (that one passed through the required flag `--config.file`). 
