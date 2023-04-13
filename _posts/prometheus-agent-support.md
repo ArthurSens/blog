@@ -91,4 +91,4 @@ If we could use the Prometheus-Operator to deploy the Agent as a DaemonSet, i.e.
 
 Another pattern that can be explored is the sidecar injection. If a pod contains a particular annotation, the Prometheus-Operator could inject PrometheusAgent as a sidecar container and each Pod that exposes Prometheus metrics could have its very own Prometheus buddy. Cardinality explosion would be minimal since one pod would never affect another.
 
-Of course, this is just me daydreaming without a deeper analysis of how this could be implemented. If you want to participate in this discussion, be sure to follow the related issue: https://github.com/prometheus-operator/prometheus-operator/issues/5495
+Of course, this is just me daydreaming without a deeper analysis of how this could be implemented. If you want to participate in this discussion, be sure to follow the related issue: [https://github.com/prometheus-operator/prometheus-operator/issues/5495](https://github.com/prometheus-operator/prometheus-operator/issues/5495)
