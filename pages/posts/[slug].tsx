@@ -18,12 +18,14 @@ type Props = {
   preview?: boolean
 }
 
-export default function Post({ post, morePosts, preview }: Props) {
+export default function Post({ post, preview }: Props) {
   const router = useRouter()
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  const imageURL = `https://arthursens.dev${post.ogImage.url}`
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -36,6 +38,9 @@ export default function Post({ post, morePosts, preview }: Props) {
               <Head>
                 <title>{title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
+                <meta name="twitter:title" content={post.title} />
+                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:image:src" content={imageURL} />
               </Head>
               <PostHeader
                 title={post.title}
