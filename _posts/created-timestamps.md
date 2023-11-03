@@ -110,7 +110,7 @@ We're also working on enabling Created Timestamp ingestion with the OpenMetrics 
 
 ## Created Timestamps at PromCon!
 
-This blog is an adaptation of the talk Bartek and I gave during our PromCon presentation! It goes even deeper into current pains and how Created Timestamps solves them! Feel free to watch if you prefer it that way :)
+This blog is an adaptation of the talk [Bartek](https://www.bwplotka.dev/) and I gave during our PromCon presentation! It goes even deeper into current pains and how Created Timestamps solves them! Feel free to watch if you prefer it that way :)
 
 Talk from 6:46 until 7:15
 
