@@ -1,6 +1,6 @@
 ---
 title: "When my Counter Restarted? Addressing Decade-Old Counter Limitation!"
-excerpt: "Created timestamps landed in Prometheus v2.49.0! Understand what are created timestamps, what problems it is fixing and how you can enable them in your application!"
+excerpt: "Created timestamps are coming in Prometheus v2.50.0! Understand what are created timestamps, what problems it is fixing and how you can enable them in your application!"
 coverImage: '/assets/blog/created-timestamps/cover.jpeg'
 date: '2023-11-04T00:00:00.000Z'
 author:
@@ -10,7 +10,7 @@ ogImage:
   url: '/assets/blog/created-timestamps/cover.jpeg'
 ---
 
-Prometheus v2.49.0 is coming! This version is especially important to me because it will introduce something we call "Created Timestamps Ingestion". This is part of a 6 months project that was developed as part of [Google Summer of Code](https://summerofcode.withgoogle.com/) and it touched so many different aspects of Software development! From design documents and building consensus with the team to coding SDKs and storage systems. It was a terrific learning experience that I'd recommend to any person interested in Open Source development :)
+Prometheus v2.50.0 is coming! This version is especially important to me because it will introduce something we call "Created Timestamps Ingestion". This is part of a 6 months project that was developed as part of [Google Summer of Code](https://summerofcode.withgoogle.com/) and it touched so many different aspects of Software development! From design documents and building consensus with the team to coding SDKs and storage systems. It was a terrific learning experience that I'd recommend to any person interested in Open Source development :)
 
 So, what are Created Timestamps? Let me explain it with a little story:
 
@@ -100,7 +100,7 @@ Exposing Created Timestamps is enabled by default by [Prometheus client_golang](
 
 On Prometheus's side, you'll need to make the following changes:
 * Upgrade Prometheus version to at least v2.49.0
-* Enable feature-flag `--feature-flag=created-timestamp-ingestion` (Beware that this feature flag will change the default scraping protocol to Prometheus Protobuf)
+* Enable feature-flag `--feature-flag=created-timestamp-zero-ingestion` (Beware that this feature flag will change the default scraping protocol to Prometheus Protobuf)
 
 ## Future of Created Timestamps (call for action!!!!)
 
@@ -112,9 +112,7 @@ We're also working on enabling Created Timestamp ingestion with the OpenMetrics 
 
 This blog is an adaptation of the talk [Bartek](https://www.bwplotka.dev/) and I gave it during our PromCon presentation! It goes even deeper into current pains and how Created Timestamps solves them! Feel free to watch if you prefer it that way :)
 
-Talk from 6:46 until 7:15
+[![Created Timestamps at PromCon](https://img.youtube.com/vi/nWf0BfQ5EEA/hqdefault.jpg)](https://youtu.be/nWf0BfQ5EEA)
 
-[![Created Timestamps at PromCon](https://img.youtube.com/vi/pKYhMTJgJUU/hqdefault.jpg)](https://www.youtube.com/embed/pKYhMTJgJUU?si=qJxk23qKgAvOKiez)
-
-[<img src="https://img.youtube.com/vi/pKYhMTJgJUU/hqdefault.jpg" width="600" height="300"
-/>](https://www.youtube.com/embed/pKYhMTJgJUU?si=qJxk23qKgAvOKiez)
+[<img src="https://img.youtube.com/vi/nWf0BfQ5EEA/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/nWf0BfQ5EEA?si=qJxk23qKgAvOKiez)
