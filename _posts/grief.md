@@ -14,7 +14,7 @@ I can live normally again, I am eating, sleeping, working... things I used to do
 
 Two weeks ago, if someone asked me "How are you?" I would just give the silence treatment. I was obviously not ok, I couldn't do shit by myself and I would have stayed in bed for a week if it wasn't for my best friend checking up on me all the time. But what about now? Am I ok? I'm doing all the things I used to do before, that's a good sign! I can't shake off this feeling that something is wrong though.
 
-# - Identity -
+## - Identity -
 
 What is grief to you? Is it an emotion? Maybe a state of mind? For me, it's the death of an Identity.
 
@@ -24,7 +24,7 @@ The self-definition of one being could be seen as how one perceives how one is p
 
 Just like my mom, and everybody else, I've been through the grief process several times. Sometimes for identities that I wanted to keep, others for identities I wasn't proud of, but nonetheless, they represented how I perceive myself. Even for those shameful identities, it can be very painful to accept the death of it... it all depends on how strong is your connection with that identity.
 
-# - Time -
+## - Time -
 
 What about time? In physics, time is defined as the measure or magnitude used to quantify the duration of events.
 
@@ -34,7 +34,7 @@ Time is not the villain though, it not only takes but also gives us opportunitie
 
 Through my experiences in life, I could see time as a friend and as an enemy. I've had huge fights with all the people that I care about the most in my life. I really thought I'd never rebuild those relationships and, hell, sometimes I was convinced I'd never even want to rebuild them. Emotional maturity, created with time, allowed me to rethink my place in those relationships and I'm grateful that it did. At the same time, relationships were taken from me without notice and it doesn't matter how much I ask for time to go back, it just refuses to listen. 
 
-# - Death - 
+## - Death - 
 
 Death is so terrifying, isn't it? I can't say I don't fear dying, but I fear a lot more the death of my loved ones. If I die, well... I won't be here to grieve it, but if one of my loved ones is gone, how would this event change me? Will I be ok?
 
@@ -44,7 +44,7 @@ Death comes to all of us, it's not for us to decide if it was too early but we c
 
 Regardless of age, what happens after death? Reincarnation? Heaven? Hell? Void? I envy those who have so much faith in a certain religion that they let go of the desire for control. My human instincts are too present. I need to understand things to believe them, and I don't understand death. Will time work as my friend or as my enemy here? I'm not sure if there will be a point in time when I let go of the desire for control, and therefore I'm bound to always fear death. 
 
-# - Hi, nice to meet you! -
+## - Hi, nice to meet you! -
 
 For those who've read until here, I'm Arthur 👋. Between my many identities, I used to identify myself as Killua's whole world. 
 
