@@ -44,6 +44,8 @@ const Meta = () => {
       <meta name="twitter:title" content="Arthur Sens's Personal blog"/>
       <meta name="twitter:description" content="Check out Arthur's adventures in distributed systems, observability and weightlifting!"/>
       <meta name="twitter:image:src" content="https://arthursens.dev/assets/blog/authors/arthursens.jpg" />
+
+      <title>Arthur Sens's Personal blog</title>
     </Head>
   )
 }
