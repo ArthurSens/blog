@@ -1,4 +1,6 @@
 ---
+lang: en
+translationKey: prometheus-shard-autoscaling
 title: "Prometheus Shard Autoscaling with Prometheus-Operator"
 excerpt: "Automate Prometheus shard scale up/down with Horizontal Pod Autoscalers and Prometheus-Operator!"
 coverImage: '/assets/blog/prometheus-shard-autoscaling/cover.png'

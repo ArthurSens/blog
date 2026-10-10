@@ -1,3 +1,4 @@
+import { useLanguage } from '../lib/use-language'
 import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,10 +10,11 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, slug }: Props) => {
+  const { t } = useLanguage()
   const image = (
     <Image
       src={src}
-      alt={`Cover Image for ${title}`}
+      alt={`${t.cover} ${title}`}
       className={cn('shadow-sm w-full', {
         'hover:shadow-lg transition-shadow duration-200': slug,
       })}

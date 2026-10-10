@@ -1,7 +1,9 @@
+import { useLanguage } from '../lib/use-language'
 import Head from 'next/head'
 import { HOME_OG_IMAGE_URL } from '../lib/constants'
 
 const Meta = () => {
+  const { t } = useLanguage()
   return (
     <Head>
       <link
@@ -34,16 +36,17 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`Arthur Sens personal blog.`}
+        content={t.description}
+        key="description"
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content={HOME_OG_IMAGE_URL} key="og:image" />
       
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ArthurSilvaSens" />
       <meta name="twitter:creator" content="@ArthurSilvaSens"/>
-      <meta name="twitter:title" content="Arthur Sens's Personal blog"/>
-      <meta name="twitter:description" content="Check out Arthur's adventures in distributed systems, observability and weightlifting!"/>
-      <meta name="twitter:image:src" content="https://arthursens.dev/assets/blog/authors/arthursens.jpg" />
+      <meta name="twitter:title" content={t.description} key="twitter:title"/>
+      <meta name="twitter:description" content={t.socialDescription} key="twitter:description"/>
+      <meta name="twitter:image:src" content="https://arthursens.dev/assets/blog/authors/arthursens.jpg" key="twitter:image:src" />
     </Head>
   )
 }

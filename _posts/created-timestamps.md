@@ -1,4 +1,6 @@
 ---
+lang: en
+translationKey: created-timestamps
 title: "When my Counter Restarted? Addressing Decade-Old Counter Limitation!"
 excerpt: "Created timestamps are coming in Prometheus v2.50.0! Understand what are created timestamps, what problems it is fixing and how you can enable them in your application!"
 coverImage: '/assets/blog/created-timestamps/cover.jpeg'
