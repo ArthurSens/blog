@@ -7,3 +7,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Arthur Sens brand
+
+Before changing UI, colors, typography, artwork, animation, or public-facing copy, read and follow `design/brand-guidelines.md`. It is the brand source of truth across the blog and future slides, social assets, and newsletters. Use semantic tokens from `styles/index.css`; keep light and dark themes aligned with the documented palette. Do not invent a new visual identity or recolor cats and project logos to match UI accents.
+
+Preserve original post text and existing URLs unless explicitly instructed otherwise. Respect reduced motion, readable article layouts, English and Brazilian Portuguese, and theme accessibility. Do not add Source/GitHub links or a motion toggle. Email sending always requires Arthur's approval of the specific draft. Validate affected behavior with the repository checks; keep changes in the draft PR until Arthur requests otherwise.
+
+Family animation revisions use a simplified comfortable scene with Arthur, Gon, and Pitou together. Target a 1–2 second loop at 6 FPS, with small petting/ear movements and stable camera, scale, and floor. No chasing or fighting. Keep whole-scene drawings and a reduced-motion still. Review playback before committing; report visual limitations honestly. If playback cannot be reviewed, retain an uncommitted draft unless Arthur has explicitly authorized a push for preview feedback. The previous chase animation is rejected.

@@ -1,9 +1,11 @@
-import { useLanguage } from '../lib/use-language'
-import Head from 'next/head'
-import { HOME_OG_IMAGE_URL } from '../lib/constants'
+import { useLanguage } from "../lib/use-language";
+import Head from "next/head";
+import { useTheme } from "./theme";
+import { HOME_OG_IMAGE_URL } from "../lib/constants";
 
 const Meta = () => {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage();
+  const { preference } = useTheme();
   return (
     <Head>
       <link
@@ -32,23 +34,38 @@ const Meta = () => {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={t.description}
-        key="description"
+      {preference === "system" ? (
+        <>
+          <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" key="theme-light" />
+          <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" key="theme-dark" />
+        </>
+      ) : (
+        <meta name="theme-color" content={preference === "dark" ? "#171717" : "#FAFAFA"} key="theme-manual" />
+      )}
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        href={locale === "en" ? "/feed.xml" : "/pt-br/feed.xml"}
       />
+      <meta name="description" content={t.description} key="description" />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="og:image" />
-      
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ArthurSilvaSens" />
-      <meta name="twitter:creator" content="@ArthurSilvaSens"/>
-      <meta name="twitter:title" content={t.description} key="twitter:title"/>
-      <meta name="twitter:description" content={t.socialDescription} key="twitter:description"/>
-      <meta name="twitter:image:src" content="https://arthursens.dev/assets/blog/authors/arthursens.jpg" key="twitter:image:src" />
+      <meta name="twitter:creator" content="@ArthurSilvaSens" />
+      <meta name="twitter:title" content={t.description} key="twitter:title" />
+      <meta
+        name="twitter:description"
+        content={t.socialDescription}
+        key="twitter:description"
+      />
+      <meta
+        name="twitter:image:src"
+        content="https://arthursens.dev/assets/blog/authors/arthursens.jpg"
+        key="twitter:image:src"
+      />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;
