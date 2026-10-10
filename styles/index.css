@@ -359,30 +359,6 @@ img {
   background: linear-gradient(90deg, transparent, #b4baa9, transparent);
 }
 
-.interests {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid var(--line);
-  padding: 12px 0 27px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.status-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 100%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-.interest-stars {
-  margin-left: auto;
-  font-size: 24px;
-  color: var(--accent);
-}
-
 .writing-section {
   padding-top: 37px;
 }
@@ -607,44 +583,6 @@ img {
   text-decoration: underline;
   text-underline-offset: 4px;
   font-size: 12px;
-}
-
-.project-company {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 26px 0;
-  margin-bottom: 15px;
-  gap: 20px;
-}
-
-.project-company > div {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.project-company a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-}
-
-.project-company img {
-  height: 50px;
-  width: 45px;
-  object-fit: contain;
-  transition: transform 0.25s;
-}
-
-.project-company a:hover img {
-  transform: translateY(-5px) rotate(-5deg);
-}
-
-.project-cross {
-  color: #a9ae9f;
-  font-size: 16px;
 }
 
 .newsletter {
@@ -949,7 +887,6 @@ img {
 }
 
 [data-motion="off"] .cat-button:hover,
-[data-motion="off"] .project-company a:hover img,
 [data-motion="off"] .featured-art:hover img {
   transform: none;
 }
@@ -1074,14 +1011,6 @@ img {
     margin-top: -6px;
     margin-bottom: 2px;
   }
-  .interests {
-    font-size: 10px;
-    padding: 17px 0 22px;
-    gap: 8px;
-  }
-  .interest-stars {
-    font-size: 20px;
-  }
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -1149,19 +1078,6 @@ img {
   }
   .archive {
     margin-top: 28px;
-  }
-  .project-company {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 9px;
-    margin-bottom: 0;
-    padding: 25px 0 10px;
-  }
-  .project-company > div {
-    gap: 14px;
-  }
-  .project-company a {
-    font-size: 10px;
   }
   .newsletter {
     grid-template-columns: 1fr;

@@ -96,13 +96,6 @@ export default function Index({ allPosts }: Props) {
             <span className="scene-floor" aria-hidden="true" />
           </div>
         </section>
-        <div className="interests">
-          <span className="status-dot" aria-hidden="true" />
-          <span>{c.interests}</span>
-          <span className="interest-stars" aria-hidden="true">
-            ✳
-          </span>
-        </div>
         <section
           className="writing-section"
           id="writing"
@@ -211,34 +204,6 @@ export default function Index({ allPosts }: Props) {
             </div>
           )}
         </section>
-        <aside className="project-company">
-          <span className="eyebrow">
-            {locale === "en" ? "RECURRING CHARACTERS" : "PRESENÇAS CONSTANTES"}
-          </span>
-          <div>
-            <a href="https://prometheus.io">
-              <img
-                src="/assets/cast/prometheus.webp"
-                alt=""
-                width="60"
-                height="60"
-              />
-              <span>Prometheus ↗</span>
-            </a>
-            <span className="project-cross" aria-hidden="true">
-              ×
-            </span>
-            <a href="https://opentelemetry.io">
-              <img
-                src="/assets/cast/opentelemetry.webp"
-                alt=""
-                width="60"
-                height="60"
-              />
-              <span>OpenTelemetry ↗</span>
-            </a>
-          </div>
-        </aside>
         <Newsletter key={locale} />
       </div>
     </Layout>

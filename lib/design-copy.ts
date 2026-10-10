@@ -16,7 +16,6 @@ export const designCopy = {
     read: "Read the story",
     minutes: "min read",
     noResults: "No stories here yet.",
-    interests: "Open source, strong opinions, and occasionally sore muscles.",
     pause: "Pause motion",
     play: "Enable motion",
     wave: "Say hello to Arthur",
@@ -59,8 +58,6 @@ export const designCopy = {
     read: "Ler o artigo",
     minutes: "min de leitura",
     noResults: "Ainda não há artigos por aqui.",
-    interests:
-      "Código aberto, opiniões fortes e, às vezes, músculos doloridos.",
     pause: "Pausar movimentos",
     play: "Ativar movimentos",
     wave: "Dê um oi para o Arthur",
