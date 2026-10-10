@@ -1,8 +1,21 @@
 import fs from 'fs'
 import { join } from 'path'
-import matter from 'gray-matter'
+import { parse } from 'yaml'
 
 const postsDirectory = join(process.cwd(), '_posts')
+
+function parsePost(fileContents: string) {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/.exec(fileContents)
+
+  if (!match) {
+    throw new Error('Post is missing valid YAML front matter')
+  }
+
+  return {
+    data: parse(match[1]) as Record<string, unknown>,
+    content: match[2],
+  }
+}
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
@@ -12,10 +25,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+  const { data, content } = parsePost(fileContents)
 
   type Items = {
-    [key: string]: string
+    [key: string]: any
   }
 
   const items: Items = {}
