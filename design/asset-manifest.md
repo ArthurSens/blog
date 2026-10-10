@@ -12,7 +12,7 @@ Logo references:
 
 The project mascots are original derivative illustrations for this personal blog, not official project mascots. Official logo source: https://github.com/cncf/artwork .
 
-The complete-scene homepage animation draft is documented in `family-full-scene.md`, including source drawings, offline in-betweens, and pending playback review. The rejected cutout rig and original pose-sheet studies are retained in `family-rig.md` and `family-scene.md` for provenance.
+The current simplified six-drawing cozy loop is documented in `family-cozy.md`. The rejected 30 FPS chase MP4, source atlas, and rendering scripts have been removed from the current branch. Earlier cutout studies are historical and are not served by the homepage.
 
 Full generation prompts and visual inspection notes are in `brand-assets.md`, `personal-assets.md`, and `exercise-assets.md`. All new illustrations were created using built-in ImageGen. No programmatic stand-in artwork was drawn.
 

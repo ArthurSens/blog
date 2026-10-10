@@ -1,0 +1,22 @@
+{
+  "width": 300,
+  "height": 260,
+  "fps": 6,
+  "duration": 1667,
+  "outputFrames": 10,
+  "sourceDrawings": 6,
+  "order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "interpolation": "none",
+  "playbackReview": "pending"
+}

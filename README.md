@@ -41,7 +41,7 @@ The approved brief is in `design/brief.md`; generation prompts and asset provena
 
 The cast uses ordinary image assets and discrete sprite frames. `Character` stops frame updates offscreen and while the page is hidden. Animations follow the visitor’s system reduced-motion preference without storing a local setting. Article pages do not run the homepage cast. The Grief memorial is still, the original photo remains available, and a small running vignette appears after the essay.
 
-The homepage animation draft contains Arthur, Gon, and Pitou together in complete scenes: a 3.6-second chase, playful tussle, surprise, and gentle separation at 30 FPS. It uses 35 complete drawings and offline in-betweens, with a calm poster for reduced motion or an off-screen/hidden page. Browser playback review is still pending; see [the draft and asset notes](design/family-full-scene.md).
+The homepage uses a simple comfortable scene with Arthur, Gon, and Pitou: a 1.667-second loop at 6 FPS, using six complete drawings played forward and back for ten frames, without interpolation or chasing. Reduced motion and off-screen/hidden pages use a calm still. See [the scene notes](design/family-cozy.md).
 
 Gon and Pitou's artwork is based on Arthur's supplied photographs. Gon is black-and-white; Pitou is gray-and-white with a fluffy tail. Killua is tri-color.
 

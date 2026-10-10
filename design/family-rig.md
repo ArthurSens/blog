@@ -1,6 +1,6 @@
 # Fixed-stage family loop
 
-Historical study. Arthur rejected this animation. The replacement full-scene draft and current review status are documented in `family-full-scene.md`; statements below describe the earlier implementation.
+Historical study. Arthur rejected this animation. The replacement full-scene draft and current review status are documented in `family-cozy.md`; statements below describe the earlier implementation.
 
 This supersedes the original twelve-pose atlas in `family-scene.md`. That atlas had drawings extending beyond nominal cells and inconsistent framing. It is retained for provenance, but is not served by the homepage.
 

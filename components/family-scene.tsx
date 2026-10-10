@@ -20,7 +20,7 @@ export default function FamilyScene({ label }: { label: string }) {
   const playing = enabled && visible && pageVisible;
   return (
     <div ref={ref} className="family-scene" role="img" aria-label={label}
-      data-playing={playing} data-scene-fps="30" data-scene-duration="3600">
+      data-playing={playing} data-scene-fps="6" data-scene-duration="1667">
       <img src={`/assets/cast/arth-gon-pitou-${playing ? "loop" : "still"}.webp`}
         alt="" width="300" height="260" draggable={false} />
     </div>
