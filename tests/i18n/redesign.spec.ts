@@ -67,16 +67,38 @@ test("the shared family scene respects reduced motion", async ({ page }) => {
   await expect(scene.locator("img")).toHaveAttribute("src", /-still\.webp$/);
 });
 
-test("family animation has a fixed canvas and 24 FPS motion timing", async () => {
+test("family animation uses full scenes on a fixed canvas at 30 FPS", async () => {
   const motion = await sharp("public/assets/cast/arth-gon-pitou-loop.webp", { animated: true }).metadata();
   const still = await sharp("public/assets/cast/arth-gon-pitou-still.webp").metadata();
   expect(motion.width).toBe(still.width);
   expect(motion.pageHeight).toBe(still.height);
   expect(motion.hasAlpha).toBe(true);
   expect(motion.loop).toBe(0);
-  expect(motion.delay!.reduce((sum, value) => sum + value, 0)).toBe(2500);
-  // WebP coalesces identical hold frames. Moving frames keep 41–42 ms timing.
-  expect(motion.delay!.filter((delay) => delay === 41 || delay === 42).length).toBeGreaterThan(40);
+  expect(motion.delay!.reduce((sum, value) => sum + value, 0)).toBe(3600);
+  // Identical loop-closing frames may coalesce; real moving frames last 33–34 ms.
+  expect(motion.delay!.filter((delay) => delay === 33 || delay === 34).length).toBeGreaterThan(95);
+  const drawings = await sharp("public/assets/cast/family-full-keyframes.webp").metadata();
+  expect(drawings.width).toBe(300);
+  expect(drawings.height).toBe(260 * 36);
+  const decoded = await sharp("public/assets/cast/arth-gon-pitou-loop.webp", { animated: true }).ensureAlpha().raw().toBuffer();
+  const frameSize = 300 * 260 * 4;
+  for (let f = 0; f < motion.pages!; f++) {
+    let top = 260, bottom = 0, left = 300, right = 0;
+    for (let y = 0; y < 260; y++) for (let x = 0; x < 300; x++) {
+      if (decoded[f * frameSize + (y * 300 + x) * 4 + 3] < 220) continue;
+      left = Math.min(left, x);
+      right = Math.max(right, x);
+      top = Math.min(top, y);
+      bottom = Math.max(bottom, y);
+    }
+    expect(left).toBeGreaterThan(0);
+    expect(right).toBeLessThan(299);
+    // Shared head/floor anchors reject global jumping and cutout-bound jitter.
+    expect(top).toBeGreaterThanOrEqual(23);
+    expect(top).toBeLessThanOrEqual(27);
+    expect(bottom).toBeGreaterThanOrEqual(232);
+    expect(bottom).toBeLessThanOrEqual(238);
+  }
 });
 
 test("family animation uses its still when scrolled out of view", async ({ page }) => {

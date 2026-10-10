@@ -1,5 +1,7 @@
 # Fixed-stage family loop
 
+Historical study. Arthur rejected this animation. The replacement full-scene draft and current review status are documented in `family-full-scene.md`; statements below describe the earlier implementation.
+
 This supersedes the original twelve-pose atlas in `family-scene.md`. That atlas had drawings extending beyond nominal cells and inconsistent framing. It is retained for provenance, but is not served by the homepage.
 
 The homepage now uses `arth-gon-pitou-loop.webp`: 300×260, transparent, 2.5 seconds, with movement sampled at 24 FPS. `arth-gon-pitou-still.webp` is the matching calm poster. WebP coalesces identical resting frames; moving frames retain 41/42ms timing, with total delays exactly 2500ms. The browser decodes the animation natively instead of React advancing twelve poses with timers. Reduced motion, off-screen visibility, and hidden tabs select the still image.

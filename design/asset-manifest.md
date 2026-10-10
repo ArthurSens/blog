@@ -12,7 +12,7 @@ Logo references:
 
 The project mascots are original derivative illustrations for this personal blog, not official project mascots. Official logo source: https://github.com/cncf/artwork .
 
-The connected homepage cast scene is documented in `family-rig.md`; the superseded pose sheet is documented in `family-scene.md`.
+The complete-scene homepage animation draft is documented in `family-full-scene.md`, including source drawings, offline in-betweens, and pending playback review. The rejected cutout rig and original pose-sheet studies are retained in `family-rig.md` and `family-scene.md` for provenance.
 
 Full generation prompts and visual inspection notes are in `brand-assets.md`, `personal-assets.md`, and `exercise-assets.md`. All new illustrations were created using built-in ImageGen. No programmatic stand-in artwork was drawn.
 

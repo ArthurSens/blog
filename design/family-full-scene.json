@@ -1,0 +1,13 @@
+{
+  "width": 300,
+  "height": 260,
+  "fps": 30,
+  "duration": 3600,
+  "renderedFrames": 108,
+  "sourceSlots": 36,
+  "uniqueDrawings": 35,
+  "inbetweens": 72,
+  "interpolation": "RIFE v4.6, CPU, whole-scene",
+  "registration": "shared beanie center/top and rug floor; no per-character transforms",
+  "playbackReview": "not reviewed locally; Arthur authorized preview push for feedback"
+}

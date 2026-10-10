@@ -1,5 +1,7 @@
 # Arthur, Gon and Pitou — original pose-sheet study
 
+Historical study. Arthur rejected this animation. The replacement full-scene draft and current review status are documented in `family-full-scene.md`; statements below describe the earlier implementation.
+
 Superseded by the fixed-stage 2.5-second, 24-FPS cutout loop in `family-rig.md`. Kept as provenance; the homepage no longer crops this atlas.
 
 Created with built-in ImageGen, using `arth-wave.webp`, `gon.webp`, and `pitou.webp` as identity/style references. No ChatGPT Pet records were modified. The exercise/wave strips and individual cat assets remain available for future contextual uses.
