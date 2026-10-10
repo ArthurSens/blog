@@ -4,6 +4,8 @@ Arth reference: existing owned ChatGPT Pet `pet_6ab6dc436b2c81919e06b37e043accbe
 
 Killua reference: existing `public/assets/blog/grief/cover.png` from this repository.
 
+Gon and Pitou references: Arthur's supplied photographs, including `IMG_6364.jpeg` and `IMG_3610(1).jpeg`. Gon is the black-and-white tuxedo cat; Pitou is gray-and-white. The fan-art footer vignette uses the same tri-color Killua reference.
+
 Logo references:
 - https://raw.githubusercontent.com/cncf/artwork/main/projects/prometheus/icon/color/prometheus-icon-color.png
 - https://raw.githubusercontent.com/cncf/artwork/main/projects/opentelemetry/icon/color/opentelemetry-icon-color.png

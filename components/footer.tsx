@@ -14,7 +14,6 @@ export default function Footer() {
         <p>{c.footer}</p>
       </div>
       <div className="footer-links">
-        <a href="https://github.com/ArthurSens/blog">{c.source} ↗</a>
         <a href="https://www.linkedin.com/in/arthursilvasens/">LinkedIn ↗</a>
         <a href="https://twitter.com/ArthurSilvaSens">Twitter ↗</a>
         <Link href="/privacy">{c.privacy}</Link>

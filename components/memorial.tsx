@@ -1,17 +1,11 @@
-import { useState } from "react";
-import { useMotion } from "./motion";
 import { useLanguage } from "../lib/use-language";
 import { designCopy } from "../lib/design-copy";
 
 export default function Memorial() {
   const { locale } = useLanguage();
   const c = designCopy[locale];
-  const { enabled } = useMotion();
-  const [playing, setPlaying] = useState(false);
   return (
-    <figure
-      className={`memorial ${playing && enabled ? "memory-playing" : ""}`}
-    >
+    <figure className="memorial">
       <div className="memory-art">
         <img
           src="/assets/cast/killua-memory.webp"
@@ -24,19 +18,7 @@ export default function Memorial() {
           height="550"
         />
       </div>
-      <figcaption>
-        <span>{c.memory}</span>
-        {enabled && (
-          <button
-            type="button"
-            onClick={() => setPlaying(!playing)}
-            aria-pressed={playing}
-          >
-            {playing ? c.stopMoment : c.moment}{" "}
-            <span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span>
-          </button>
-        )}
-      </figcaption>
+      <figcaption>{c.memory}</figcaption>
       <details className="memory-photo">
         <summary>{c.photo}</summary>
         <img

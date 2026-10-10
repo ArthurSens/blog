@@ -98,6 +98,21 @@ export default function Post({
             </div>
           )}
           <PostBody content={post.content} />
+          {memorial && (
+            <div className="killua-chase reading-column">
+              <img
+                src="/assets/cast/killua-chase.webp"
+                alt={
+                  post.lang === "en"
+                    ? "Killua the cat runs playfully with Killua from Hunter × Hunter."
+                    : "O gato Killua corre brincando com Killua de Hunter × Hunter."
+                }
+                width="520"
+                height="347"
+                loading="lazy"
+              />
+            </div>
+          )}
           <div className="article-end reading-column">
             <span aria-hidden="true">✳</span>
             <Link href="/">← {c.back}</Link>

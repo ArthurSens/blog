@@ -71,6 +71,8 @@ test("reduced motion is respected and the memorial starts still", async ({
     "none",
   );
   await expect(page.locator(".character-sprite")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "A quiet moment" })).toHaveCount(0);
+  await expect(page.getByAltText(/Killua the cat runs playfully/)).toHaveCSS("animation-name", "none");
   await page.getByText("A photograph of Killua", { exact: true }).click();
   await expect(page.getByAltText("Killua", { exact: true })).toBeVisible();
 });

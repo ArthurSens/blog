@@ -39,9 +39,9 @@ This uses Next.js Pages Router i18n with static generation and `next start`; `ou
 The approved brief is in `design/brief.md`; generation prompts and asset provenance are in `design/`.
 `styles/index.css` defines the responsive layout and colors. `lib/design-copy.ts` contains English and Portuguese UI copy.
 
-The cast uses ordinary image assets and discrete sprite frames. `Character` stops frame updates offscreen and while the page is hidden. Animations follow the visitor’s system reduced-motion preference without storing a local setting. Article pages do not run the homepage cast. The Grief memorial is still until explicitly played, and the original photo remains available.
+The cast uses ordinary image assets and discrete sprite frames. `Character` stops frame updates offscreen and while the page is hidden. Animations follow the visitor’s system reduced-motion preference without storing a local setting. Article pages do not run the homepage cast. The Grief memorial is still, the original photo remains available, and a small running vignette appears after the essay.
 
-Gon and Pitou's current artwork is provisional; replace with photo-grounded likenesses before final design approval.
+Gon and Pitou's artwork is based on Arthur's supplied photographs. Gon is black-and-white; Pitou is gray-and-white with a fluffy tail. Killua is tri-color.
 
 Every original `_posts/*.md` file is preserved. Presentation decisions such as Grief's memorial live outside the post in `lib/post-presentation.ts` and the article renderer. Future post-specific interactive explanations can be added as explicit React components, alongside prepared assets; they do not require rewriting the Markdown pipeline or adding a CMS. Prefer a useful static fallback and opt-in motion.
 

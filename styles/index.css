@@ -781,22 +781,9 @@ img {
 }
 
 .memorial figcaption {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: var(--muted);
   font-size: 11px;
   padding-top: 12px;
-}
-
-.memorial figcaption button {
-  border: 0;
-  background: none;
-  font-size: 11px;
-  padding: 5px;
-  display: flex;
-  gap: 9px;
-  align-items: center;
 }
 
 .memory-photo {
@@ -820,18 +807,25 @@ img {
   font-size: 80px;
 }
 
-.memory-playing .memory-art img {
-  animation: memory-breath 6s ease-in-out infinite;
-  transform-origin: 50% 100%;
+.killua-chase {
+  display: flex;
+  justify-content: flex-end;
+  margin: 32px auto 8px;
 }
 
-@keyframes memory-breath {
+.killua-chase img {
+  width: min(260px, 65vw);
+  height: auto;
+  animation: little-run 5s ease-in-out infinite;
+}
+
+@keyframes little-run {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translateX(8px);
   }
 }
 
