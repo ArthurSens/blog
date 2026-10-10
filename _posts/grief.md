@@ -1,4 +1,6 @@
 ---
+lang: en
+translationKey: grief
 title: "Grief."
 excerpt: ""
 coverImage: '/assets/blog/grief/cover.png'

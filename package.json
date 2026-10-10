@@ -9,7 +9,9 @@
     "start": "next start",
     "typecheck": "tsc",
     "test:visual": "playwright test",
-    "test:visual:update": "playwright test --update-snapshots"
+    "test:visual:update": "playwright test --update-snapshots",
+    "test:i18n": "playwright test --config playwright.i18n.config.ts",
+    "test:i18n:http": "npm run test:i18n -- --grep @http --project desktop-chromium"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

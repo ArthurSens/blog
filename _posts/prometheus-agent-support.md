@@ -1,4 +1,6 @@
 ---
+lang: en
+translationKey: prometheus-agent-support
 title: 'Prometheus-Operator v0.64.0 supports Prometheus in Agent mode'
 excerpt: 'Prometheus Agent is a deployment mode optimized for remote-write scenarios. Prometheus-Operator has finally released support for this deployment mode! Take a quick look behind the decisions made so this could happen and what it enables.'
 coverImage: '/assets/blog/prometheus-agent-support/cover.png'
