@@ -4,7 +4,7 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import SiteHeader from "../components/site-header";
 import DateFormatter from "../components/date-formatter";
-import Character from "../components/character";
+import FamilyScene from "../components/family-scene";
 import Newsletter from "../components/newsletter";
 import LanguageSwitcher from "../components/language-switcher";
 import LanguageMeta from "../components/language-meta";
@@ -22,15 +22,10 @@ export default function Index({ allPosts }: Props) {
   const { locale, t } = useLanguage();
   const c = designCopy[locale];
   const [filter, setFilter] = useState("all");
-  const [friend, setFriend] = useState<string | null>(null);
   const filtered = allPosts.filter(
     (p) => filter === "all" || topicFor(p) === filter,
   );
   const [latest, ...rest] = filtered;
-  const companions = [
-    { id: "gon", name: "Gon" },
-    { id: "pitou", name: "Pitou" },
-  ];
   return (
     <Layout>
       <Head>
@@ -65,36 +60,7 @@ export default function Index({ allPosts }: Props) {
               <p>{c.aboutText}</p>
             </details>
           </div>
-          <div className="cast-scene" aria-label={c.scene}>
-            <div className="scene-orbit" aria-hidden="true" />
-            <Character label={c.wave} />
-            <div className="cat-pair">
-              {companions.map((cat) => (
-                <button
-                  type="button"
-                  key={cat.id}
-                  className="cat-button"
-                  aria-label={cat.name}
-                  onClick={() =>
-                    setFriend(friend === cat.name ? null : cat.name)
-                  }
-                >
-                  <img
-                    src={`/assets/cast/${cat.id}.webp`}
-                    alt=""
-                    width="80"
-                    height="80"
-                  />
-                </button>
-              ))}
-            </div>
-            {friend && (
-              <span className="cast-name" role="status">
-                {friend} ♡
-              </span>
-            )}
-            <span className="scene-floor" aria-hidden="true" />
-          </div>
+          <FamilyScene label={c.scene} />
         </section>
         <section
           className="writing-section"

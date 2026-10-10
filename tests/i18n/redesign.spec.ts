@@ -51,14 +51,28 @@ test("topic filters keep stories reachable", async ({ page }) => {
   }
 });
 
-test("homepage motion follows the system preference", async ({ page }) => {
+test("the shared family scene respects reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await expect(page.locator(".character-sprite")).toHaveCSS("background-position", "-576px 0px");
-  const wave = page.getByRole("button", { name: "Say hello to Arthur", exact: true });
-  await expect(wave).toBeDisabled();
+  const scene = page.locator(".family-scene");
+  await expect(scene).toHaveAttribute("data-playing", "false");
+  await expect(scene).toHaveAttribute("data-scene-frame", "0");
+  await expect(page.locator(".character-sprite")).toHaveCount(0);
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await expect(wave).toBeEnabled();
+  await expect(scene).toHaveAttribute("data-playing", "true");
+  await expect(scene).toHaveAttribute("data-scene-phase", "chase", { timeout: 8000 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(scene).toHaveAttribute("data-playing", "false");
+  await expect(scene).toHaveAttribute("data-scene-frame", "0");
+});
+
+test("the family story reaches a gentle separation and loops", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const scene = page.locator(".family-scene");
+  await expect(scene).toHaveAttribute("data-playing", "true");
+  await expect(scene).toHaveAttribute("data-scene-phase", "separate", { timeout: 14000 });
+  await expect(scene).toHaveAttribute("data-scene-frame", "0", { timeout: 8000 });
 });
 
 test("reduced motion is respected and the memorial starts still", async ({

@@ -1151,3 +1151,21 @@ img {
   background: var(--soft);
   color: var(--accent);
 }
+
+/* One shared illustration keeps the cast on the same stage in every frame. */
+.family-scene {
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  justify-self: center;
+  overflow: hidden;
+}
+.family-scene .family-sheet {
+  position: absolute;
+  width: 400%;
+  height: 300%;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}

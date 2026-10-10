@@ -4,9 +4,9 @@ Audience: engineers and OSS contributors. Prometheus/OpenTelemetry interoperabil
 
 Homepage: a compact welcoming introduction; posts occupy the main content. Restrained warm neutrals, serif editorial headings, olive accents, and illustrated 2D Pets-style characters. No 3D, Japanese-script decoration, or visual clutter.
 
-Cast: Arthur leads; Gon and Pitou are close secondary characters; Prometheus and OpenTelemetry recur when relevant; anime references are occasional. Existing Arth companion is reused as the identity reference. The new exercise strip is a website asset. Project characters derive from official logo references. Gon is black-and-white and Pitou is gray-and-white, grounded in Arthur's photographs.
+Cast: Arthur leads; Gon and Pitou are close secondary characters; Prometheus and OpenTelemetry recur when relevant; anime references are occasional. Existing Arth companion is reused as the identity reference. The homepage now uses a connected Arthur/Gon/Pitou scene; the exercise strip is retained for future use. Project characters derive from official logo references. Gon is black-and-white and Pitou is gray-and-white, grounded in Arthur's photographs.
 
-Motion: exercise → rest → watch; a tap prompts a wave. Respect the system's reduced-motion preference; suspend character frame advancement while outside the viewport or the document is hidden. Article pages remain quiet. The memorial image is still, with a small playful vignette after the essay.
+Motion: cozy pause → two chase laps around seated Arthur → playful tussle → surprise → gentle separation → peaceful reunion → restart. The scene uses one shared frame sheet; see `family-scene.md`. Respect the system's reduced-motion preference; suspend character frame advancement while outside the viewport or the document is hidden. Article pages remain quiet. The memorial image is still, with a small playful vignette after the essay.
 
 Grief: the original Markdown file and all its text are unchanged. New Arthur/Killua art uses the existing approved Arth image and Killua's actual cover photo. The original photograph remains available in a disclosure. No comedic interactions or exercise characters appear on the article page.
 
