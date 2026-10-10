@@ -53,12 +53,6 @@ export default function Index({ allPosts }: Props) {
               <span className="accent">*</span>
             </h1>
             <p>{c.intro}</p>
-            <details className="about-details">
-              <summary>
-                {c.about} <span aria-hidden="true">↗</span>
-              </summary>
-              <p>{c.aboutText}</p>
-            </details>
           </div>
           <FamilyScene label={c.scene} />
         </section>

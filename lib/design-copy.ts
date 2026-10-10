@@ -5,9 +5,6 @@ export const designCopy = {
     intro:
       "I connect the worlds of Prometheus and OpenTelemetry. Here, I write about the systems we build and the things that make us human.",
     aside: "Engineer. Open-source contributor. Always a work in progress.",
-    about: "A little more about me",
-    aboutText:
-      "Away from the keyboard, you’ll usually find me doing CrossFit, calisthenics or gymnastics, watching anime, or hanging out with Gon and Pitou. I love sharing what I learn and seeing people grow alongside me.",
     latest: "The latest",
     archive: "More to explore",
     all: "All writing",
@@ -42,9 +39,6 @@ export const designCopy = {
     intro:
       "Conecto os mundos do Prometheus e do OpenTelemetry. Aqui, escrevo sobre os sistemas que construímos e as coisas que nos fazem humanos.",
     aside: "Engenheiro. Colaborador de código aberto. Sempre em construção.",
-    about: "Um pouco mais sobre mim",
-    aboutText:
-      "Longe do teclado, costumo estar no CrossFit, na calistenia ou na ginástica, assistindo a animes ou com Gon e Pitou. Adoro compartilhar o que aprendo e ver as pessoas crescerem comigo.",
     latest: "O mais recente",
     archive: "Mais para explorar",
     all: "Todos os artigos",

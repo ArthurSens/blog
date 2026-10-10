@@ -245,34 +245,6 @@ img {
   margin: 0;
 }
 
-.about-details {
-  margin-top: 15px;
-  font-size: 12px;
-}
-
-.about-details summary {
-  display: inline-block;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 3px;
-  list-style: none;
-}
-
-.about-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.about-details summary span {
-  margin-left: 7px;
-  color: var(--accent);
-}
-
-.about-details p {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--muted);
-  max-width: 600px;
-}
-
 .cast-scene {
   position: relative;
   height: 175px;
