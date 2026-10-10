@@ -36,3 +36,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local notification previews; never sent automatically
+/.newsletter-drafts/
+
+# Full-resolution generation intermediates; optimized assets are committed
+/design/source/
