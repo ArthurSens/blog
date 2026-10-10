@@ -21,7 +21,7 @@ Keep blog pages mostly neutral, with restrained red. Do not fill long reading se
 
 Body and secondary text and red links must meet WCAG AA 4.5:1 against their surfaces. Large text needs 3:1. Essential control boundaries, state indicators, and focus indicators need 3:1 against adjacent backgrounds; decorative separators are exempt. Links in prose remain underlined, selected filters expose state, and color never carries meaning alone. For diagrams, use labels and shape or line differences as well as color. Do not assume red always means an error; label errors explicitly.
 
-The website defaults to the system color scheme. Readers can choose System, Light, or Dark. A manual preference is stored only in browser local storage; System clears it. Both themes must work before hydration and with reduced motion. Avoid animated full-page color transitions.
+The website defaults to the system color scheme. A single icon button cycles System → Light → Dark → System, displaying a monitor, sun, or moon for the current preference. Its accessible label and tooltip name the current and next choices in the reader’s language. The header has no Writing link. A manual preference is stored only in browser local storage; System clears it. Both themes must work before hydration and with reduced motion. Avoid animated full-page color transitions.
 
 ## Typography and layout
 
