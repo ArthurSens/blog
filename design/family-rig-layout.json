@@ -1,0 +1,146 @@
+[
+  {
+    "name": "arth-seated",
+    "box": {
+      "left": 20,
+      "top": 13,
+      "width": 479,
+      "height": 520
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 440,
+    "height": 478,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 440,
+      "height": 478
+    }
+  },
+  {
+    "name": "gon-run-0",
+    "box": {
+      "left": 504,
+      "top": 142,
+      "width": 549,
+      "height": 377
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 240,
+    "height": 200,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 240,
+      "height": 200
+    }
+  },
+  {
+    "name": "gon-run-1",
+    "box": {
+      "left": 1046,
+      "top": 136,
+      "width": 467,
+      "height": 366
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 240,
+    "height": 200,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 240,
+      "height": 200
+    }
+  },
+  {
+    "name": "pitou-run-0",
+    "box": {
+      "left": 16,
+      "top": 574,
+      "width": 564,
+      "height": 388
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 240,
+    "height": 200,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 240,
+      "height": 200
+    }
+  },
+  {
+    "name": "pitou-run-1",
+    "box": {
+      "left": 558,
+      "top": 580,
+      "width": 522,
+      "height": 405
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 240,
+    "height": 200,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 240,
+      "height": 200
+    }
+  },
+  {
+    "name": "arth-surprised",
+    "box": {
+      "left": 1194,
+      "top": 600,
+      "width": 268,
+      "height": 350
+    },
+    "format": "webp",
+    "mediaType": "image/webp",
+    "width": 200,
+    "height": 261,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 200,
+      "height": 261
+    }
+  }
+]

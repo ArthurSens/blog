@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import sharp from "sharp";
 import { getAllPosts } from "../../lib/api";
 
 for (const locale of ["en", "pt-br"]) {
@@ -56,23 +57,36 @@ test("the shared family scene respects reduced motion", async ({ page }) => {
   await page.goto("/");
   const scene = page.locator(".family-scene");
   await expect(scene).toHaveAttribute("data-playing", "false");
-  await expect(scene).toHaveAttribute("data-scene-frame", "0");
+  await expect(scene.locator("img")).toHaveAttribute("src", /-still\.webp$/);
   await expect(page.locator(".character-sprite")).toHaveCount(0);
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await expect(scene).toHaveAttribute("data-playing", "true");
-  await expect(scene).toHaveAttribute("data-scene-phase", "chase", { timeout: 8000 });
+  await expect(scene.locator("img")).toHaveAttribute("src", /-loop\.webp$/);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(scene).toHaveAttribute("data-playing", "false");
-  await expect(scene).toHaveAttribute("data-scene-frame", "0");
+  await expect(scene.locator("img")).toHaveAttribute("src", /-still\.webp$/);
 });
 
-test("the family story reaches a gentle separation and loops", async ({ page }) => {
+test("family animation has a fixed canvas and 24 FPS motion timing", async () => {
+  const motion = await sharp("public/assets/cast/arth-gon-pitou-loop.webp", { animated: true }).metadata();
+  const still = await sharp("public/assets/cast/arth-gon-pitou-still.webp").metadata();
+  expect(motion.width).toBe(still.width);
+  expect(motion.pageHeight).toBe(still.height);
+  expect(motion.hasAlpha).toBe(true);
+  expect(motion.loop).toBe(0);
+  expect(motion.delay!.reduce((sum, value) => sum + value, 0)).toBe(2500);
+  // WebP coalesces identical hold frames. Moving frames keep 41–42 ms timing.
+  expect(motion.delay!.filter((delay) => delay === 41 || delay === 42).length).toBeGreaterThan(40);
+});
+
+test("family animation uses its still when scrolled out of view", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
   const scene = page.locator(".family-scene");
   await expect(scene).toHaveAttribute("data-playing", "true");
-  await expect(scene).toHaveAttribute("data-scene-phase", "separate", { timeout: 14000 });
-  await expect(scene).toHaveAttribute("data-scene-frame", "0", { timeout: 8000 });
+  await page.locator(".site-footer").scrollIntoViewIfNeeded();
+  await expect(scene).toHaveAttribute("data-playing", "false");
+  await expect(scene.locator("img")).toHaveAttribute("src", /-still\.webp$/);
 });
 
 test("reduced motion is respected and the memorial starts still", async ({

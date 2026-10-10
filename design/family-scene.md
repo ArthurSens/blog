@@ -1,4 +1,6 @@
-# Arthur, Gon and Pitou — shared homepage scene
+# Arthur, Gon and Pitou — original pose-sheet study
+
+Superseded by the fixed-stage 2.5-second, 24-FPS cutout loop in `family-rig.md`. Kept as provenance; the homepage no longer crops this atlas.
 
 Created with built-in ImageGen, using `arth-wave.webp`, `gon.webp`, and `pitou.webp` as identity/style references. No ChatGPT Pet records were modified. The exercise/wave strips and individual cat assets remain available for future contextual uses.
 

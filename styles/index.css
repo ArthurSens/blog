@@ -1152,20 +1152,26 @@ img {
   color: var(--accent);
 }
 
-/* One shared illustration keeps the cast on the same stage in every frame. */
+/* The entire animation is a fixed-size canvas, not a cropped pose atlas. */
 .family-scene {
   position: relative;
   width: 300px;
   max-width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 300 / 260;
   justify-self: center;
-  overflow: hidden;
 }
-.family-scene .family-sheet {
+.family-ground {
   position: absolute;
-  width: 400%;
-  height: 300%;
-  max-width: none;
-  pointer-events: none;
-  user-select: none;
+  width: 80%;
+  height: 18%;
+  left: 10%;
+  bottom: 0;
+  border-radius: 50%;
+  background: var(--soft);
+}
+.family-scene > img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
