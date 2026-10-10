@@ -35,8 +35,8 @@ export default function Privacy() {
           <h2>{pt ? "Preferências" : "Preferences"}</h2>
           <p>
             {pt
-              ? "As animações respeitam a preferência de movimento reduzido do seu sistema. Não armazenamos uma preferência de movimento."
-              : "Animations respect your system’s reduced-motion preference. We do not store a motion preference."}
+              ? "As animações respeitam a preferência de movimento reduzido do seu sistema. Não armazenamos uma preferência de movimento. Sua escolha de tema claro ou escuro fica somente no armazenamento local do navegador; escolher Sistema remove essa preferência."
+              : "Animations respect your system’s reduced-motion preference. We do not store a motion preference. Your light or dark theme choice is saved only in your browser’s local storage; choosing System removes that preference."}
           </p>
           <h2>{pt ? "Novos artigos" : "New posts"}</h2>
           <p>

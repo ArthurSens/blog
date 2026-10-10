@@ -1,15 +1,46 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 :root {
-  --paper: #f7f6f2;
-  --ink: #242725;
-  --muted: #676d66;
-  --line: #d9dcd3;
-  --accent: #547342;
-  --soft: #e9ede3;
-  --orange: #d76a41;
+  color-scheme: light;
+  --paper: #FAFAFA;
+  --ink: #191919;
+  --muted: #626262;
+  --line: #D5D5D5;
+  --accent: #C6262D;
+  --soft: #EFEFEF;
+  --accent-soft: #FBE7E8;
+  --selection: #F5C5C7;
   --serif: Georgia, "Times New Roman", serif;
-  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* Keep these values aligned with design/brand-guidelines.md. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #171717;
+  --ink: #F4F4F4;
+  --muted: #B5B5B5;
+  --line: #444444;
+  --accent: #FF686F;
+  --soft: #252525;
+  --accent-soft: #3B2325;
+  --selection: #653035;
+}
+
+/* System theme also works before JavaScript or when it is disabled. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --paper: #171717;
+    --ink: #F4F4F4;
+    --muted: #B5B5B5;
+    --line: #444444;
+    --accent: #FF686F;
+    --soft: #252525;
+    --accent-soft: #3B2325;
+    --selection: #653035;
+  }
 }
 
 * {
@@ -70,7 +101,8 @@ img {
 }
 
 ::selection {
-  background: #dbe4ce;
+  color: var(--ink);
+  background: var(--selection);
 }
 
 .shell {
@@ -96,7 +128,7 @@ img {
   left: 16px;
   top: -100px;
   background: var(--ink);
-  color: white;
+  color: var(--paper);
   padding: 12px;
   z-index: 20;
 }
@@ -108,7 +140,7 @@ img {
 .preview-banner {
   padding: 10px;
   text-align: center;
-  background: #e8dcc5;
+  background: var(--soft);
   font-size: 13px;
 }
 
@@ -142,7 +174,7 @@ img {
 }
 
 .brand-mark span {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .header-actions {
@@ -263,7 +295,7 @@ img {
 
 .scene-orbit {
   position: absolute;
-  border: 1px dashed #d4d9c8;
+  border: 1px dashed var(--line);
   border-radius: 50%;
   width: 195px;
   height: 130px;
@@ -324,7 +356,7 @@ img {
   font-size: 11px;
   right: 22px;
   top: 20px;
-  background: #fffdf6;
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 5px 9px;
@@ -337,7 +369,7 @@ img {
   left: 12px;
   right: 5px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #b4baa9, transparent);
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
 }
 
 .writing-section {
@@ -384,9 +416,9 @@ img {
 }
 
 .post-filters button[aria-pressed="true"] {
-  border-color: #cdd4c2;
-  background: #edf0e8;
-  color: #3f5936;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .post-filters button:hover {
@@ -398,8 +430,8 @@ img {
   grid-template-columns: 1.25fr 1fr;
   gap: 48px;
   padding: 30px;
-  background: #ecefe6;
-  border: 1px solid #dce1d3;
+  background: var(--soft);
+  border: 1px solid var(--line);
   border-radius: 3px;
   min-height: 290px;
 }
@@ -456,7 +488,7 @@ img {
   display: inline-flex;
   gap: 20px;
   font-weight: 650;
-  border-bottom: 1px solid #a9b49f;
+  border-bottom: 1px solid var(--accent);
   padding: 0 0 5px;
 }
 
@@ -467,7 +499,7 @@ img {
   overflow: hidden;
   min-height: 210px;
   border-radius: 2px;
-  background: #e2e7d7;
+  background: var(--soft);
 }
 
 .featured-art img {
@@ -505,7 +537,7 @@ img {
 
 .post-index {
   font-size: 10px;
-  color: #89907f;
+  color: var(--muted);
   align-self: start;
   padding-top: 3px;
 }
@@ -569,7 +601,7 @@ img {
 .newsletter {
   border: 1px solid var(--line);
   border-radius: 3px;
-  background: #eeeee6;
+  background: var(--soft);
   padding: 32px 36px;
   display: grid;
   grid-template-columns: 1fr 250px;
@@ -608,7 +640,7 @@ img {
   width: 100%;
   padding: 9px 10px;
   background: var(--paper);
-  border: 1px solid #cdd2c5;
+  border: 1px solid var(--muted);
   border-radius: 3px;
   font-size: 12px;
 }
@@ -764,8 +796,8 @@ img {
 }
 
 .memory-art {
-  background: #eeeee5;
-  border: 1px solid #e2e3d8;
+  background: var(--soft);
+  border: 1px solid var(--line);
   border-radius: 3px;
   height: 330px;
   display: flex;
@@ -1114,4 +1146,18 @@ img {
   .privacy-content h1 {
     font-size: 36px;
   }
+}
+
+.theme-select {
+  max-width: 100px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  padding: 6px;
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .header-actions { gap: 12px; }
+  .site-header { gap: 12px; }
 }

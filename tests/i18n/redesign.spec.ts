@@ -119,3 +119,38 @@ test("representative pages fit the viewport and load their artwork", async ({
   }
   expect(errors).toEqual([]);
 });
+
+test("theme follows the system and remembers manual overrides", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+  const theme = page.getByRole("combobox", { name: "Theme", exact: true });
+  await expect(theme).toHaveValue("system");
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(23, 23, 23)");
+  await theme.selectOption("light");
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(250, 250, 250)");
+  await page.reload();
+  await expect(theme).toHaveValue("light");
+  await page.goto("/posts/created-timestamps");
+  await expect(page.getByRole("combobox", { name: "Theme", exact: true })).toHaveValue("light");
+  await page.getByRole("combobox", { name: "Theme", exact: true }).selectOption("system");
+  expect(await page.evaluate(() => localStorage.getItem("arthursens-theme"))).toBeNull();
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(23, 23, 23)");
+  await page.emulateMedia({ colorScheme: "light" });
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(250, 250, 250)");
+  await page.goto("/pt-br");
+  await page.getByRole("combobox", { name: "Tema", exact: true }).selectOption("dark");
+  await page.emulateMedia({ colorScheme: "light" });
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(23, 23, 23)");
+});
+
+test("dark reading pages use the shared palette", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });
+  for (const path of ["/", "/posts/grief", "/posts/created-timestamps"]) {
+    await page.goto(path);
+    await expect(page.locator("body")).toHaveCSS("color", "rgb(244, 244, 244)");
+    const code = page.locator("pre").first();
+    if (await code.count()) await expect(code).toHaveCSS("background-color", "rgb(37, 37, 37)");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await page.screenshot({ path: test.info().outputPath(`dark-${path.replace(/\W+/g, "-") || "home"}.png`), fullPage: true, animations: "disabled" });
+  }
+});

@@ -1,9 +1,11 @@
 import { useLanguage } from "../lib/use-language";
 import Head from "next/head";
+import { useTheme } from "./theme";
 import { HOME_OG_IMAGE_URL } from "../lib/constants";
 
 const Meta = () => {
   const { t, locale } = useLanguage();
+  const { preference } = useTheme();
   return (
     <Head>
       <link
@@ -32,7 +34,14 @@ const Meta = () => {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#f7f6f2" />
+      {preference === "system" ? (
+        <>
+          <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" key="theme-light" />
+          <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" key="theme-dark" />
+        </>
+      ) : (
+        <meta name="theme-color" content={preference === "dark" ? "#171717" : "#FAFAFA"} key="theme-manual" />
+      )}
       <link
         rel="alternate"
         type="application/rss+xml"

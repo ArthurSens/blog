@@ -3,12 +3,16 @@ import { Analytics } from "@vercel/analytics/react";
 import "../styles/index.css";
 import { MotionProvider } from "../components/motion";
 
+import { ThemeProvider } from "../components/theme";
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <MotionProvider>
-        <Component {...pageProps} />
-      </MotionProvider>
+      <ThemeProvider>
+        <MotionProvider>
+          <Component {...pageProps} />
+        </MotionProvider>
+      </ThemeProvider>
       <Analytics />
     </>
   );

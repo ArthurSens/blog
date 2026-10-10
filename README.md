@@ -67,3 +67,7 @@ Vercel Analytics remains enabled for aggregate visitor/page-view measurements. B
 ## Review checks
 
 The redesign adds HTTP checks for feeds, privacy pages, the unchanged memorial text, and notification drafts. Browser interaction checks cover topic filters, motion, mobile overflow and memorial behavior. Existing macOS visual snapshots describe the previous design and must be deliberately rebaselined after visual approval; they are not an acceptance test for matching the new design to the old one.
+
+### Brand and themes
+
+Read [the brand guidelines](design/brand-guidelines.md) before changing visuals or public-facing copy. Shared semantic color and typography tokens are in `styles/index.css`; article styles use the same tokens. The header's System / Light / Dark selector follows the device by default and remembers manual overrides in local storage (`arthursens-theme`). Selecting System clears the override. No theme preference is sent to a server. The initial document applies a stored override before paint, and system themes work without JavaScript.
