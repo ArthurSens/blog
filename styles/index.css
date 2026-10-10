@@ -157,25 +157,6 @@ img {
   padding-bottom: 4px;
 }
 
-.github-link {
-  color: var(--muted);
-}
-
-.motion-toggle {
-  border: 1px solid var(--line);
-  background: transparent;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 13px;
-  display: grid;
-  place-items: center;
-}
-
-.motion-toggle:hover {
-  background: var(--soft);
-}
-
 .locale-row {
   display: flex;
   justify-content: space-between;
@@ -969,9 +950,6 @@ img {
   .header-actions {
     gap: 15px;
     font-size: 11px;
-  }
-  .github-link {
-    display: none;
   }
   .locale-row {
     align-items: flex-start;

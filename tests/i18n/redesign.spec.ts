@@ -51,19 +51,14 @@ test("topic filters keep stories reachable", async ({ page }) => {
   }
 });
 
-test("motion can be paused and survives navigation", async ({ page }) => {
-  await page.emulateMedia({ reducedMotion: "no-preference" });
+test("homepage motion follows the system preference", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await page.getByRole("button", { name: "Pause motion", exact: true }).click();
-  const sprite = page.locator(".character-sprite");
-  await expect(sprite).toHaveCSS("background-position", "-576px 0px");
-  await page.reload();
-  await expect(
-    page.getByRole("button", { name: "Enable motion", exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Say hello to Arthur", exact: true }),
-  ).toBeDisabled();
+  await expect(page.locator(".character-sprite")).toHaveCSS("background-position", "-576px 0px");
+  const wave = page.getByRole("button", { name: "Say hello to Arthur", exact: true });
+  await expect(wave).toBeDisabled();
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await expect(wave).toBeEnabled();
 });
 
 test("reduced motion is respected and the memorial starts still", async ({

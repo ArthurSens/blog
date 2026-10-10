@@ -35,8 +35,8 @@ export default function Privacy() {
           <h2>{pt ? "Preferências" : "Preferences"}</h2>
           <p>
             {pt
-              ? "O controle de movimento salva apenas sua preferência neste navegador. Essa preferência não é enviada para um servidor."
-              : "The motion control saves only your preference in this browser. That preference is not sent to a server."}
+              ? "As animações respeitam a preferência de movimento reduzido do seu sistema. Não armazenamos uma preferência de movimento."
+              : "Animations respect your system’s reduced-motion preference. We do not store a motion preference."}
           </p>
           <h2>{pt ? "Novos artigos" : "New posts"}</h2>
           <p>
