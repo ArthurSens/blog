@@ -1138,3 +1138,16 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* Prose stays narrow; explicitly authored MDX scenes can use the article width. */
+.mdx-article > :not(section) {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.article-image-fallback {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+  font-size: 15px;
+}

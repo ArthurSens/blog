@@ -13,6 +13,7 @@ type PostType = {
   ogImage: {
     url: string
   }
+  format?: "md" | "mdx"
   content: string
 }
 

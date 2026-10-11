@@ -12,11 +12,16 @@
     "test:visual:update": "playwright test --update-snapshots",
     "test:i18n": "playwright test --config playwright.i18n.config.ts",
     "test:i18n:http": "npm run test:i18n -- --grep @http --project desktop-chromium",
-    "prebuild": "node scripts/generate-feeds.mjs",
-    "predev": "node scripts/generate-feeds.mjs",
-    "newsletter:draft": "node scripts/newsletter-draft.mjs"
+    "prebuild": "node scripts/generate-mdx-registry.mjs && node scripts/generate-feeds.mjs",
+    "predev": "node scripts/generate-mdx-registry.mjs && node scripts/generate-feeds.mjs",
+    "newsletter:draft": "node scripts/newsletter-draft.mjs",
+    "pretypecheck": "node scripts/generate-mdx-registry.mjs"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.4.0",
+    "@types/mdx": "^2.0.14",
     "@vercel/analytics": "^2.0.1",
     "classnames": "^2.5.1",
     "date-fns": "^4.4.0",
@@ -24,6 +29,7 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "remark": "^15.0.1",
+    "remark-frontmatter": "^5.0.0",
     "remark-html": "^16.0.1",
     "typescript": "^7.0.2",
     "yaml": "^2.9.1"

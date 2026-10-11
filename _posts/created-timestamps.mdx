@@ -12,11 +12,20 @@ ogImage:
   url: '/assets/blog/created-timestamps/cover.jpeg'
 ---
 
+import { CreatedTimestampsStory } from '../components/stories/created-timestamps-story'
+import { StoryStep } from '../components/stories/scroll-story'
+import ArticleImage from '../components/article-image'
+import { CounterExperiment } from '../components/stories/counter-experiment'
+
 Prometheus v2.50.0 is coming! This version is especially important to me because it will introduce something we call "Created Timestamps Ingestion". This is part of a 6 months project that was developed as part of [Google Summer of Code](https://summerofcode.withgoogle.com/) and it touched so many different aspects of Software development! From design documents and building consensus with the team to coding SDKs and storage systems. It was a terrific learning experience that I'd recommend to any person interested in Open Source development :)
 
 So, what are Created Timestamps? Let me explain it with a little story:
 
 ## Monitoring the rabbit vs. turtle race training
+
+<CreatedTimestampsStory>
+
+<StoryStep value={0}>
 
 Once upon a time, there was a rabbit and a turtle... yes this is a real story... believe us!
 
@@ -24,27 +33,35 @@ The rabbit and the turtle were training for a legendary race. So legendary that 
 
 The coach wanted to make sure both of them ran at least 30 meters every single day and he also set up alerts to monitor potential lazy students, but the data he was seeing was a bit strange, so he asked for our help.
 
-![Turtle and rabbit outside the track](/assets/blog/created-timestamps/turtle-rabbit-outside-track.png)
-
 One thing that is important to note is that only when each animal crosses the start line, Prometheus can identify that the animal starts the training and needs to be measured. This means we have no time series until that happens.
+
+</StoryStep>
+
+<StoryStep value={10}>
 
 So yeah, both of them went to the race track, and the turtle immediately started its training. 
 
-![Turtle at 10m mark](/assets/blog/created-timestamps/turtle-at-10m.png)
-
 The rabbit saw how slow the turtle was running and was like "What a clown, I'm gonna take a nap and still do my training before the turtle"
 
-Meanwhile, Prometheus checked the state of the training and the turtle was already 10m away, so Prometheus sees `travel_meters_total` equal to 10. 
+Meanwhile, Prometheus checked the state of the training and the turtle was already 10m away, so Prometheus sees `travel_meters_total` equal to 10.
+
+</StoryStep>
+
+<StoryStep value={20}>
 
 The rabbit was competitive even in its sleep, so 10 seconds later it woke up and saw the turtle already 20m away.
 
 Notice how the rabbit still hasn't crossed the start line, so Prometheus checks the state again but has no idea that the rabbit even exists.
 
-![Turtle at 20m mark](/assets/blog/created-timestamps/turtle-at-20m.png)
+</StoryStep>
+
+<StoryStep value={30}>
 
 On the third measurement, Prometheus sees both animals on the 30-meter mark. We were lucky because we were there and saw everything, but the coach could only query Prometheus to know what happened.
 
-![Turtle and rabbit at 30m mark](/assets/blog/created-timestamps/turtle-and-rabbit-at-30m.png)
+</StoryStep>
+
+</CreatedTimestampsStory>
 
 So, in the eyes of the coach, what happened there?
 
@@ -96,6 +113,8 @@ This also reflects on rates, showing how the rabbit was super fast and did not c
 
 ![rate(traveled_meters_total) with Created Timestamps](/assets/blog/created-timestamps/rate-traveled-meters-with-created-timestamps.png)
 
+<CounterExperiment />
+
 ## Enabling Created Timestamps in your workloads
 
 Exposing Created Timestamps is enabled by default by [Prometheus client_golang](https://github.com/prometheus/client_golang) since release [v1.17.0](https://github.com/prometheus/client_golang/releases/tag/v1.17.0), as long as Prometheus Protobuf exposition format is used during content negotiation.
@@ -116,5 +135,5 @@ This blog is an adaptation of the talk [Bartek](https://www.bwplotka.dev/) and I
 
 [![Created Timestamps at PromCon](https://img.youtube.com/vi/nWf0BfQ5EEA/hqdefault.jpg)](https://youtu.be/nWf0BfQ5EEA)
 
-[<img src="https://img.youtube.com/vi/nWf0BfQ5EEA/hqdefault.jpg" width="600" height="300"
+[<ArticleImage src="https://img.youtube.com/vi/nWf0BfQ5EEA/hqdefault.jpg" width="600" height="300"
 />](https://www.youtube.com/embed/nWf0BfQ5EEA?si=qJxk23qKgAvOKiez)
