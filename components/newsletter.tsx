@@ -19,59 +19,41 @@ export function newsletterUrl(locale: Locale) {
 }
 export default function Newsletter() {
   const { locale } = useLanguage();
-  const [language, setLanguage] = useState<Locale>(locale);
-  const [formOpen, setFormOpen] = useState(false);
+  const [openedLocale, setOpenedLocale] = useState<Locale | null>(null);
+  const formOpen = openedLocale === locale;
   const c = designCopy[locale];
-  const url = newsletterUrl(language);
+  const url = newsletterUrl(locale);
   const embeddable = url && new URL(url).hostname.endsWith(".sibforms.com");
   return (
     <section className="newsletter" aria-labelledby="newsletter-title">
       <div className="newsletter-copy">
-        <span className="eyebrow">
-          {locale === "en" ? "THE OCCASIONAL NOTE" : "DE VEZ EM QUANDO"}
-        </span>
         <h2 id="newsletter-title">{c.newsletter}</h2>
         <p>{url ? c.newsletterText : c.newsletterFallback}</p>
       </div>
       <div className="newsletter-actions">
-        <label htmlFor="newsletter-language">
-          {locale === "en" ? "Reading language" : "Idioma de leitura"}
-        </label>
-        <select
-          id="newsletter-language"
-          value={language}
-          onChange={(e) => {
-            setLanguage(e.target.value as Locale);
-            setFormOpen(false);
-          }}
-        >
-          <option value="en">English</option>
-          <option value="pt-br">Português</option>
-        </select>
         {url && embeddable && (
           <button className="button button-dark" type="button"
             aria-expanded={formOpen} aria-controls="newsletter-form"
-            onClick={() => setFormOpen(!formOpen)}>
+            onClick={() => setOpenedLocale(formOpen ? null : locale)}>
             {formOpen ? (locale === "en" ? "Close form" : "Fechar formulário") : c.subscribe}
           </button>
         )}
-        {url && (
-          <a className={embeddable ? "text-link" : "button button-dark"} href={url}>
-            {embeddable ? (locale === "en" ? "Open signup in another page" : "Abrir inscrição em outra página") : c.subscribe} <span aria-hidden="true">↗</span>
+        {url && !embeddable && (
+          <a className="button button-dark" href={url}>
+            {c.subscribe} <span aria-hidden="true">↗</span>
           </a>
         )}
         <a
           className={url ? "text-link" : "button button-dark"}
-          href={language === "en" ? "/feed.xml" : "/pt-br/feed.xml"}
+          href={locale === "en" ? "/feed.xml" : "/pt-br/feed.xml"}
         >
           {c.rss} <span aria-hidden="true">↗</span>
         </a>
       </div>
       {url && embeddable && formOpen && (
         <div id="newsletter-form" className="newsletter-form">
-          <p>{locale === "en" ? "This signup form is hosted by Brevo." : "Este formulário de inscrição é hospedado pelo Brevo."}</p>
           <iframe key={url} src={url} width="540" height="520"
-            title={language === "en" ? "Subscribe to Arthur Sens’s blog in English" : "Assinar o blog de Arthur Sens em português"}
+            title={locale === "en" ? "Subscribe to Arthur Sens’s blog in English" : "Assinar o blog de Arthur Sens em português"}
             referrerPolicy="no-referrer" />
         </div>
       )}

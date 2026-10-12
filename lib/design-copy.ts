@@ -18,7 +18,7 @@ export const designCopy = {
     close: "Close",
     newsletter: "Keep in touch.",
     newsletterText:
-      "A note when there’s something new to read. Pick your language and take it at your own pace.",
+      "Get an email when I publish a new post.",
     subscribe: "Get new posts by email",
     rss: "Follow via RSS",
     newsletterFallback:
@@ -52,7 +52,7 @@ export const designCopy = {
     close: "Fechar",
     newsletter: "Vamos manter contato.",
     newsletterText:
-      "Um aviso quando houver algo novo para ler. Escolha seu idioma e acompanhe no seu ritmo.",
+      "Receba um aviso por e-mail quando eu publicar um novo artigo.",
     subscribe: "Receber novos artigos por e-mail",
     rss: "Acompanhar por RSS",
     newsletterFallback:

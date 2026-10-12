@@ -596,10 +596,6 @@ img {
   min-width: 0;
 }
 
-.newsletter-form > p {
-  margin-bottom: 12px;
-}
-
 .newsletter-form iframe {
   display: block;
   width: 100%;
@@ -610,20 +606,6 @@ img {
   border-radius: 3px;
   background: #FAFAFA;
   color-scheme: light;
-}
-
-.newsletter-actions label {
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.newsletter select {
-  width: 100%;
-  padding: 9px 10px;
-  background: var(--paper);
-  border: 1px solid var(--muted);
-  border-radius: 3px;
-  font-size: 12px;
 }
 
 .button {
