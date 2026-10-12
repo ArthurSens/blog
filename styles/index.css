@@ -591,6 +591,27 @@ img {
   gap: 9px;
 }
 
+.newsletter-form {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.newsletter-form > p {
+  margin-bottom: 12px;
+}
+
+.newsletter-form iframe {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  height: 520px;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #FAFAFA;
+  color-scheme: light;
+}
+
 .newsletter-actions label {
   font-size: 10px;
   color: var(--muted);
