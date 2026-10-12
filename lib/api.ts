@@ -36,14 +36,18 @@ export function translationsFor(post: Post, posts: Post[]): Translation[] {
 }
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'))
+  return fs.readdirSync(postsDirectory).filter((file) => /\.mdx?$/.test(file))
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
-  const realSlug = slug.replace(/\.md$/, '')
+  const realSlug = slug.replace(/\.mdx?$/, '')
   // Resolve only known filenames, never a path supplied by a request.
-  if (!getPostSlugs().includes(`${realSlug}.md`)) return undefined
-  return parsePost(fs.readFileSync(join(postsDirectory, `${realSlug}.md`), 'utf8'), realSlug)
+  const files = getPostSlugs().filter((file) => file.replace(/\.mdx?$/, '') === realSlug)
+  if (files.length > 1) throw new Error(`Duplicate post slug: ${realSlug}`)
+  if (!files.length) return undefined
+  const file = files[0]
+  return { ...parsePost(fs.readFileSync(join(postsDirectory, file), 'utf8'), realSlug),
+    format: file.endsWith('.mdx') ? 'mdx' : 'md' }
 }
 
 export function getAllPosts(locale?: Locale): Post[] {

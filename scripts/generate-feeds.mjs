@@ -13,12 +13,12 @@ const escape = (value) =>
       })[c],
   );
 const posts = readdirSync("_posts")
-  .filter((f) => f.endsWith(".md"))
+  .filter((f) => /\.mdx?$/.test(f))
   .map((file) => {
     const source = readFileSync(`_posts/${file}`, "utf8");
     const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(source);
     if (!match) throw new Error(`Invalid front matter: ${file}`);
-    return { ...parse(match[1]), slug: file.slice(0, -3) };
+    return { ...parse(match[1]), slug: file.replace(/\.mdx?$/, "") };
   })
   .sort((a, b) => String(b.date).localeCompare(String(a.date)));
 for (const locale of ["en", "pt-br"]) {

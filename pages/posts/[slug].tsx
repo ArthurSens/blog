@@ -97,7 +97,7 @@ export default function Post({
               />
             </div>
           )}
-          <PostBody content={post.content} />
+          <PostBody content={post.content} slug={post.slug} format={post.format} />
           {memorial && (
             <div className="killua-chase reading-column">
               <img
@@ -134,7 +134,7 @@ export async function getStaticProps({
   if (!post || post.lang !== getLocale(locale)) return { notFound: true };
   const translations = translationsFor(post, getAllPosts());
   const readingTime = readingMinutes(post.content);
-  const content = await markdownToHtml(post.content);
+  const content = post.format === "mdx" ? "" : await markdownToHtml(post.content);
   return { props: { post: { ...post, content }, translations, readingTime } };
 }
 export async function getStaticPaths() {

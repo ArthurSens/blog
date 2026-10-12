@@ -45,7 +45,7 @@ The homepage uses a simple comfortable scene with Arthur, Gon, and Pitou: a 1.66
 
 Gon and Pitou's artwork is based on Arthur's supplied photographs. Gon is black-and-white; Pitou is gray-and-white with a fluffy tail. Killua is tri-color.
 
-Every original `_posts/*.md` file is preserved. Presentation decisions such as Grief's memorial live outside the post in `lib/post-presentation.ts` and the article renderer. Future post-specific interactive explanations can be added as explicit React components, alongside prepared assets; they do not require rewriting the Markdown pipeline or adding a CMS. Prefer a useful static fallback and opt-in motion.
+Posts support both Markdown (`.md`) and MDX (`.mdx`). Existing Markdown rendering is unchanged. The created timestamps article is the first MDX example: its original prose and URL remain intact, with authored scroll scenes and an interactive scrape-timing experiment. No CMS is required. See [the authoring guide](design/article-authoring.md).
 
 ## Free email subscriptions
 

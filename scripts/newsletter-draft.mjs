@@ -2,15 +2,16 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { parse } from "yaml";
 const slug = process.argv[2];
+const file = ["md", "mdx"].map((ext) => `_posts/${slug}.${ext}`).find(existsSync);
 if (
   !slug ||
   !/^[a-zA-Z0-9_-]+$/.test(slug) ||
-  !existsSync(`_posts/${slug}.md`)
+  !file
 ) {
   console.error("Usage: npm run newsletter:draft -- <existing-post-slug>");
   process.exit(1);
 }
-const source = readFileSync(`_posts/${slug}.md`, "utf8");
+const source = readFileSync(file, "utf8");
 const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(source);
 if (!match) throw new Error("Invalid front matter");
 const post = parse(match[1]);
