@@ -4,7 +4,8 @@ import { designCopy } from "../lib/design-copy";
 import { type Locale } from "../lib/i18n";
 
 const destinations = {
-  en: process.env.NEXT_PUBLIC_NEWSLETTER_URL_EN || "",
+  en: process.env.NEXT_PUBLIC_NEWSLETTER_URL_EN ??
+    "https://be00fc41.sibforms.com/v2/serve/MUIFAFUfAUTa5mJuyzvQ1XqUcUZY5Ce-sUkguEUg2s4spxQZulhjFCF3SLkZX3yb0S_pV7msYCKvdDquGvOf8v0wm8cTWy8Y1lwbuX_Qb3mLCoMS3_KdlCh9I3nrqm_9dIyp5x0NfXWp2sN9DMCU7KSdhalo4iaGUkyPEFK9ZeHv69SL3fWytxTHfAUJLKY3FEEO6lCnYXLO1_CzoQ==",
   "pt-br": process.env.NEXT_PUBLIC_NEWSLETTER_URL_PT_BR ??
     "https://be00fc41.sibforms.com/v2/serve/MUIFABlCu9pyqhwq3opt8ID4bHLv2YfWY_q53-meGx2hTW3TD8e_4MilSU37ZAvuxhzGdrHd7EWTDlez9yi-7udEGh_c0T7UP_yeDhKqCY0BZTn1539bR8sRNJBEsfO9NXMLfjT7n6c4c5R_2kqu5pganRs7lymBz-J8I_ttOQlZoG6uY-n0vVWGbJIJB8iOXrO81yW8Lr1fdi2Gqg==",
 };
